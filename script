@@ -1,0 +1,171 @@
+--
+-- PostgreSQL database dump
+--
+
+-- Dumped from database version 9.5.6
+-- Dumped by pg_dump version 9.5.6
+
+SET statement_timeout = 0;
+SET lock_timeout = 0;
+SET client_encoding = 'UTF8';
+SET standard_conforming_strings = on;
+SET check_function_bodies = false;
+SET client_min_messages = warning;
+SET row_security = off;
+
+--
+-- Name: plpgsql; Type: EXTENSION; Schema: -; Owner: 
+--
+
+CREATE EXTENSION IF NOT EXISTS plpgsql WITH SCHEMA pg_catalog;
+
+
+--
+-- Name: EXTENSION plpgsql; Type: COMMENT; Schema: -; Owner: 
+--
+
+COMMENT ON EXTENSION plpgsql IS 'PL/pgSQL procedural language';
+
+
+SET search_path = public, pg_catalog;
+
+SET default_tablespace = '';
+
+SET default_with_oids = false;
+
+--
+-- Name: aircraft; Type: TABLE; Schema: public; Owner: postgres
+--
+
+CREATE TABLE aircraft (
+    idaircraft character varying(20),
+    idcompany integer,
+    modelofaircraft character varying(30),
+    yearofissue integer,
+    state character varying(50)
+);
+
+
+ALTER TABLE aircraft OWNER TO postgres;
+
+--
+-- Name: company; Type: TABLE; Schema: public; Owner: postgres
+--
+
+CREATE TABLE company (
+    idcompany integer,
+    fullname character varying(20),
+    yearofregistration integer,
+    country character varying(50),
+    mainbase character varying(50),
+    additionalhub character varying(50)
+);
+
+
+ALTER TABLE company OWNER TO postgres;
+
+--
+-- Name: flight; Type: TABLE; Schema: public; Owner: postgres
+--
+
+CREATE TABLE flight (
+    idflight integer,
+    idaircraft character varying(20),
+    idpilot integer,
+    starttimedate character varying(5),
+    departure character varying(50),
+    destination character varying(50),
+    ticketsbought integer,
+    ticketsavailible integer
+);
+
+
+ALTER TABLE flight OWNER TO postgres;
+
+--
+-- Name: pilot; Type: TABLE; Schema: public; Owner: postgres
+--
+
+CREATE TABLE pilot (
+    idpilot integer,
+    fullname character varying(70),
+    dateofbirth character varying(8),
+    yearsofexpirience integer,
+    nationality character varying(3)
+);
+
+
+ALTER TABLE pilot OWNER TO postgres;
+
+--
+-- Data for Name: aircraft; Type: TABLE DATA; Schema: public; Owner: postgres
+--
+
+COPY aircraft (idaircraft, idcompany, modelofaircraft, yearofissue, state) FROM stdin;
+B-8488	5667	Airbus A380	1997	China
+RA-85667	4447	Boeing 777	2005	USA
+UP-HA001	5247	Tu-154	1997	Russia
+DY-2802	4736	Airbus A320	1995	Germany
+AZ-34598	5247	Sukhoi Superjet 100	2012	Russia
+F-WTSA	5247	Il-86	2002	Russia
+FU-158	9675	Boeing 747	2008	Mexico
+\.
+
+
+--
+-- Data for Name: company; Type: TABLE DATA; Schema: public; Owner: postgres
+--
+
+COPY company (idcompany, fullname, yearofregistration, country, mainbase, additionalhub) FROM stdin;
+5667	China Airlines	1959	People Republic of China	Taiwan TPE	Beijing PEK
+4447	American Airlines	1930	United States of America	Boston BOS	New-York JFK
+5247	Aeroflot	1923	Russian Federation	Moscow DME	Moscow SVO
+4736	AirBerlin	1978	Federal Republic of Germany	Berlin BER	Frankfurt-on-Main FRA
+9675	Aeromexico	1934	United Mexican States	Mexico MEX	NONE
+\.
+
+
+--
+-- Data for Name: flight; Type: TABLE DATA; Schema: public; Owner: postgres
+--
+
+COPY flight (idflight, idaircraft, idpilot, starttimedate, departure, destination, ticketsbought, ticketsavailible) FROM stdin;
+20072	B-8488	13382	12:20	Moscow DME	Dubai DXB	97	153
+20085	RA-85667	13376	13:30	Moscow DME	Berlin BER	54	196
+20034	UP-HA001	13354	14:50	Moscow DME	New-York JFK	174	76
+20048	DY-28022	13322	17:00	Moscow DME	Manila MNL	166	84
+20099	AZ-34598	13377	19:33	Moscow DME	Tokyo HND	85	165
+20086	F-WTSA	13399	20:10	Moscow DME	Mexico MEX	137	113
+20022	FU-158	13385	23:05	Moscow DME	Minsk MSQ	128	122
+\.
+
+
+--
+-- Data for Name: pilot; Type: TABLE DATA; Schema: public; Owner: postgres
+--
+
+COPY pilot (idpilot, fullname, dateofbirth, yearsofexpirience, nationality) FROM stdin;
+13382	Xen Dju Gen	07.12.75	13	CHI
+13376	Alfred Lungred	21.03.89	12	USA
+13354	Ivan Gladkov	12.09.73	9	RUS
+13322	Edwin van Cleaf	26.06.67	8	POL
+13377	Petr Mamontov	15.08.71	10	BEL
+13399	Hans Muller	06.08.76	15	GER
+13385	Pedro Rodriges	17.11.74	12	MEX
+\.
+
+
+--
+-- Name: public; Type: ACL; Schema: -; Owner: postgres
+--
+
+REVOKE ALL ON SCHEMA public FROM PUBLIC;
+REVOKE ALL ON SCHEMA public FROM postgres;
+GRANT ALL ON SCHEMA public TO postgres;
+GRANT ALL ON SCHEMA public TO PUBLIC;
+
+
+--
+-- PostgreSQL database dump complete
+--
+

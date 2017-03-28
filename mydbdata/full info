@@ -7,16 +7,16 @@ FLIGHT
 
 Номера рейсов
 IdFlight (int)
-81072 
-81085 
-81034 
-81048 
-81099 
-81086 
-81022 
+20072 
+20085 
+20034 
+20048 
+20099 
+20086 
+20022 
 
 Номера самолетов
-IdAircraft (int)
+IdAircraft (varchar(20))
 B-8488
 RA-85667
 UP-HA001
@@ -137,7 +137,7 @@ Sukhoi Superjet 100
 Il-86
 Boeing 747
 
-YearOfIssue (int(4))
+YearOfIssue (int)
 1997
 2005
 1997
@@ -146,7 +146,7 @@ YearOfIssue (int(4))
 2002
 2008
 
-State
+State (varchar(50))
 China
 USA
 Russia
