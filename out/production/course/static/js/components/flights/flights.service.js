@@ -5,13 +5,13 @@ function FlightsService($http) {
         all: function () {
             return $http.get(BASE_URL);
         },
-        allByFilter: function (filter) {
+        allByFilter: function (years, company) {
             return $http({
-                url: BASE_URL + "/search/findAllByPilot_YearsOfExperienceGreaterThanOrAirCraft_CompanyId",
+                url: BASE_URL + "/search/findAllByPilot_YearsOfExperienceGreaterThanAndAirCraft_CompanyIdEquals",
                 method: "GET",
                 params: {
-                    age: filter.years - 1,
-                    companyId: filter.company
+                    age: years - 1,
+                    companyId: company
                 }
             });
         },

@@ -33,9 +33,11 @@ angular.module("components.flights-table")
     })
     .filter("localTime", function () {
         return function (localTime) {
-            return localTime.hour + ":"
-                + (localTime.minute < 10) ? ("0" + localTime.minute) : localTime.minute + ":"
-                + (localTime.second < 10) ? ("0" + localTime.second) : localTime.second;
+            var hours = localTime.hour;
+            var minutes = (localTime.minute < 10) ? ("0" + localTime.minute) : localTime.minute;
+            var seconds = (localTime.second < 10) ? ("0" + localTime.second) : localTime.second;
+
+            return hours + ":" + minutes + ":" + seconds;
         }
     })
     .filter("localDate", function () {

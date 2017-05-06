@@ -30,5 +30,10 @@
             <td>{{ flight.ticketsBought }}</td>
             <td>{{ flight.ticketsAvailable }}</td>
         </tr>
+        <tr ng-if="!$ctrl.flights.length">
+            <td colspan="8">
+                Ничего не найдено
+            </td>
+        </tr>
     </tbody>
 </table>

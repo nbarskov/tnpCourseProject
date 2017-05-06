@@ -11,6 +11,6 @@ import java.util.Collection;
 public interface FlightsRepository extends CrudRepository<Flight, Long> {
     Collection<Flight> findAllByPilot_YearsOfExperienceGreaterThan(@Param("age") int age);
     Collection<Flight> findAllByAirCraft_CompanyId(@Param("companyId") long id);
-    Collection<Flight> findAllByPilot_YearsOfExperienceGreaterThanOrAirCraft_CompanyId(
+    Collection<Flight> findAllByPilot_YearsOfExperienceGreaterThanAndAirCraft_CompanyIdEquals(
             @Param("age") int age, @Param("companyId") long id);
 }
