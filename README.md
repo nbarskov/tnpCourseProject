@@ -1,3 +1,11 @@
+Используемые технологии:
+1. PL - Java 8
+2. Application Server - JBoss WildFly
+3. RDBMS - PostgreSQL 9.6
+4. Server Side - Spring Boot/Spring 4
+5. ORM - Spring Data JPA/Hibernate
+6. Client Side - AngularJS 1.6
+
 Для того, чтобы запустить у себя, необходимо иметь:
 1. Java 8
 2. IntelliJ IDEA

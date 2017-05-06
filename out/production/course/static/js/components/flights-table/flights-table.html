@@ -1,0 +1,34 @@
+<table>
+    <thead>
+    <tr>
+        <th>Идентификатор</th>
+        <th>Борт №</th>
+        <th>Название Авиакомпании</th>
+        <th>Имя пилота</th>
+        <th>Время Вылета</th>
+        <th>Аэропорт Вылета</th>
+        <th>Аэропорт Назначения</th>
+        <th>Билетов Продано</th>
+        <th>Билетов Доступно</th>
+    </tr>
+    </thead>
+    <tbody>
+        <tr ng-repeat="flight in $ctrl.flights">
+            <td>{{ flight.id }}</td>
+            <td title="{{ flight.airCraft | airCraftTitle }}">
+                {{ flight.airCraft | airCraft }}
+            </td>
+            <td title="{{ flight.airCraft.company | companyTitle }}">
+                {{ flight.airCraft.company.fullName }}
+            </td>
+            <td title="{{ flight.pilot | pilotTitle }}">
+                {{ flight.pilot.fullName }}
+            </td>
+            <td>{{ flight.startTime | localTime }}</td>
+            <td>{{ flight.departure }}</td>
+            <td>{{ flight.destination }}</td>
+            <td>{{ flight.ticketsBought }}</td>
+            <td>{{ flight.ticketsAvailable }}</td>
+        </tr>
+    </tbody>
+</table>
