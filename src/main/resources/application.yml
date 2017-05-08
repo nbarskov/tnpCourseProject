@@ -6,6 +6,6 @@ spring:
   datasource:
     initialize: false
     driverClassName: org.postgresql.Driver
-    url: jdbc:postgresql://localhost:5432/flights
-    username: dima
-    password:
+    url: jdbc:postgresql://localhost:5432/mydb4
+    username: barskovpavelev
+    password: 1234

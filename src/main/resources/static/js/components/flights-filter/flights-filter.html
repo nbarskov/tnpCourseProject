@@ -1,13 +1,18 @@
-<div class="flights-filter">
-    <label>
-        <input type="number" ng-model="$ctrl.years" min="0" step="1" ng-change="$ctrl.changed()">
-    </label>
-    <label>
-        <select ng-model="$ctrl.company" ng-change="$ctrl.changed()">
-            <option value="">Выберите авиакомпанию для фильтрации</option>
-            <option ng-repeat="company in $ctrl.companies" value="{{ company.id }}">
-                {{ company.fullName }}
-            </option>
-        </select>
-    </label>
+<div class="container">
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <h3>Параметры фильтрации</h3>
+        </div>
+        <div class="panel-body">
+                Стаж пилотирования в годах:
+                <input type="number" ng-model="$ctrl.years" min="0" step="1" ng-change="$ctrl.changed()">
+                Авиакомпания:
+                <select ng-model="$ctrl.company" ng-change="$ctrl.changed()">
+                    <option ng-repeat="company in $ctrl.companies" value="{{ company.id }}">
+                        {{ company.fullName }}
+                    </option>
+                </select>
+            </label>
+        </div>
+    </div>
 </div>

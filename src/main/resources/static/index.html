@@ -2,38 +2,62 @@
 <html ng-app="root" lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Flights</title>
-    <link rel="stylesheet" href="./styles/main.css">
+    <title>ИСУР</title>
+    <link rel="stylesheet" href="./bootstrap-3.3.7-dist/css/bootstrap.css"/>
 </head>
 <body>
+
+<nav class="navbar navbar-inverse navbar-fixed-top">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                <span class="sr-only">ИСУР</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="#">Project name</a>
+        </div>
+        <div id="navbar" class="collapse navbar-collapse">
+            <ul class="nav navbar-nav">
+                <li class="active"><a href="#">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </div><!--/.nav-collapse -->
+    </div>
+</nav>
+
 <root>
     <span class="loader">Загрузка...</span>
 </root>
-<script src="./vendor/angularjs/angular.min.js"></script>
-<script src="./vendor/angular-ui-router/angular-ui-router.min.js"></script>
+<div class="container">
+        <script src="./vendor/angularjs/angular.min.js"></script>
+        <script src="./vendor/angular-ui-router/angular-ui-router.min.js"></script>
 
-<!--ROOT-->
-<script src="./js/root/root.module.js"></script>
-<script src="./js/root/root.component.js"></script>
+        <!--ROOT-->
+        <script src="./js/root/root.module.js"></script>
+        <script src="./js/root/root.component.js"></script>
 
-<!--COMPONENTS-->
-<script src="./js/components/components.module.js"></script>
+        <!--COMPONENTS-->
+        <script src="./js/components/components.module.js"></script>
 
-<!--FLIGHTS-->
-<script src="./js/components/flights/flights.module.js"></script>
-<script src="./js/components/flights/flights.service.js"></script>
-<script src="./js/components/flights/flights.controller.js"></script>
-<script src="./js/components/flights/flights.component.js"></script>
+        <!--FLIGHTS-->
+        <script src="./js/components/flights/flights.module.js"></script>
+        <script src="./js/components/flights/flights.service.js"></script>
+        <script src="./js/components/flights/flights.controller.js"></script>
+        <script src="./js/components/flights/flights.component.js"></script>
 
-<!--FLIGHTS-FILTER-->
-<script src="./js/components/flights-filter/flights-filter.module.js"></script>
-<script src="./js/components/flights-filter/flights-filter.controller.js"></script>
-<script src="./js/components/flights-filter/flights-filter.component.js"></script>
+        <!--FLIGHTS-FILTER-->
+        <script src="./js/components/flights-filter/flights-filter.module.js"></script>
+        <script src="./js/components/flights-filter/flights-filter.controller.js"></script>
+        <script src="./js/components/flights-filter/flights-filter.component.js"></script>
 
-<!--FLIGHTS-TABLE-->
-<script src="./js/components/flights-table/flights-table.module.js"></script>
-<script src="./js/components/flights-table/flights-table.controller.js"></script>
-<script src="./js/components/flights-table/flights-table.component.js"></script>
-<script src="js/components/flights-table/flight-aircraft.filters.js"></script>
+        <!--FLIGHTS-TABLE-->
+        <script src="./js/components/flights-table/flights-table.module.js"></script>
+        <script src="./js/components/flights-table/flights-table.controller.js"></script>
+        <script src="./js/components/flights-table/flights-table.component.js"></script>
+        <script src="js/components/flights-table/flight-aircraft.filters.js"></script>
+</div>
 </body>
 </html>
