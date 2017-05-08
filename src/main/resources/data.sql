@@ -1,12 +1,12 @@
 -- PILOTS
 INSERT INTO PILOTS (pilot_id, full_name, dob, years_exp, nationality) VALUES
-  (13382, 'Dju Gen', '07/12/1975', 13, 'CHI'),
-  (13376, 'Alfred Lungred', '21/03/1989', 12, 'USA'),
-  (13354, 'Ivan Gladkov', '12/09/1973', 9, 'RUS'),
-  (13322, 'Edwin van Cleaf', '26/06/1967', 8, 'POL'),
-  (13377, 'Petr Mamontov', '15/08/1971', 10, 'BEL'),
-  (13399, 'Hans Muller', '06/08/1976', 15, 'GER'),
-  (13385, 'Pedro Rodriges', '17/11/1974', 12, 'MEX');
+  (13382, 'Dju Gen', '12/07/1975', 13, 'CHI'),
+  (13376, 'Alfred Lungred', '03/21/1989', 12, 'USA'),
+  (13354, 'Ivan Gladkov', '09/12/1973', 9, 'RUS'),
+  (13322, 'Edwin van Cleaf', '06/26/1967', 8, 'POL'),
+  (13377, 'Petr Mamontov', '08/15/1971', 10, 'BEL'),
+  (13399, 'Hans Muller', '08/06/1976', 15, 'GER'),
+  (13385, 'Pedro Rodriges', '11/17/1974', 12, 'MEX');
 
 -- COMPANIES
 INSERT INTO COMPANIES (company_id, full_name, year_registration, country, main_base, additional_hub) VALUES
