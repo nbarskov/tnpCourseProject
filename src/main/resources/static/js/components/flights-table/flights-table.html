@@ -1,18 +1,19 @@
-<table>
-    <thead>
-    <tr>
-        <th>Идентификатор</th>
-        <th>Борт №</th>
-        <th>Название Авиакомпании</th>
-        <th>Имя пилота</th>
-        <th>Время Вылета</th>
-        <th>Аэропорт Вылета</th>
-        <th>Аэропорт Назначения</th>
-        <th>Билетов Продано</th>
-        <th>Билетов Доступно</th>
-    </tr>
-    </thead>
-    <tbody>
+<div class="container">
+    <table class="table table-responsive">
+        <thead>
+        <tr>
+            <th>Идентификатор</th>
+            <th>Борт №</th>
+            <th>Название Авиакомпании</th>
+            <th>Имя пилота</th>
+            <th>Время Вылета</th>
+            <th>Аэропорт Вылета</th>
+            <th>Аэропорт Назначения</th>
+            <th>Билетов Продано</th>
+            <th>Билетов Доступно</th>
+        </tr>
+        </thead>
+        <tbody>
         <tr ng-repeat="flight in $ctrl.flights">
             <td>{{ flight.id }}</td>
             <td title="{{ flight.airCraft | airCraftTitle }}">
@@ -31,9 +32,10 @@
             <td>{{ flight.ticketsAvailable }}</td>
         </tr>
         <tr ng-if="!$ctrl.flights.length">
-            <td colspan="8">
-                Ничего не найдено
+            <td colspan="9">
+                <div class="alert alert-warning">Ничего не найдено по вашему запросу!</div>
             </td>
         </tr>
-    </tbody>
-</table>
+        </tbody>
+    </table>
+</div>
