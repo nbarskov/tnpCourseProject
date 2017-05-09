@@ -31,7 +31,7 @@
             <td>{{ flight.destination }}</td>
             <td>{{ flight.ticketsBought }}</td>
             <td>{{ flight.ticketsAvailable }}</td>
-            <td><button class="btn btn-default" ng-click="updateFlights(20072,20,20)">Редактировать число билетов</button></td>
+            <td><button class="btn btn-default" ng-controller="FlightsController"  ng-click="buttonPressed(flight.id,100,100)">Редактировать число билетов</button></td>
         </tr>
         <tr ng-if="!$ctrl.flights.length">
             <td colspan="9">

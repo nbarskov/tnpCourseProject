@@ -45,4 +45,10 @@ angular.module("components.flights").controller("FlightsController", function (F
             console.log("error", error);
         });
     };
+
+    ctrl.buttonPressed = function(flight, tickets_bought, tickets_availible) {
+        var updateFlights;
+        updateFlights = FlightsService.updateTickets(flight,tickets_bought,tickets_availible);
+        updateFlights = FlightsService.all();
+    }
 });
