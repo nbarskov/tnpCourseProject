@@ -11,7 +11,6 @@ angular.module("components.flights-table").controller("FlightsTableController", 
         var updateFlights;
         tickets_availible = 300 - tickets_bought;
         updateFlights = FlightsService.updateTickets(flight,tickets_bought,tickets_availible);
-        //updateFlights = FlightsService.updateTickets(20072, 4, 4);
         updateFlights = FlightsService.all();
     }
 });

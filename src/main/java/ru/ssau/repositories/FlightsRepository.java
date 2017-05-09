@@ -9,8 +9,7 @@ import ru.ssau.domain.Flight;
 import java.util.Collection;
 
 @RepositoryRestResource
-//public interface FlightsRepository extends CrudRepository<Flight, Long>, FlightsRepositoryCustom {
-    public interface FlightsRepository extends PagingAndSortingRepository<Flight, Long>{
+public interface FlightsRepository extends PagingAndSortingRepository<Flight, Long>{
     Collection<Flight> findAllByPilot_YearsOfExperienceGreaterThan(@Param("age") Integer age);
     Collection<Flight> findAllByAirCraft_CompanyId(@Param("companyId") Long id);
     Flight findById(@Param("flight_Id") Long id);

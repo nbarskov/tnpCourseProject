@@ -35,12 +35,13 @@
 
         </tr>
         <tr ng-if="!$ctrl.flights.length">
-            <td colspan="9">
+            Введите число купленных билетов ￼
+ ￼Ввод <td colspan="9">
                 <div class="alert alert-warning">Ничего не найдено по вашему запросу!</div>
             </td>
         </tr>
         </tbody>
     </table>
     Введите номер рейса <input ng-model="cur_id"> Введите число купленных билетов  <input ng-model="cur_tick">
-    <button ng-click="$ctrl.buttonPressed(cur_id,cur_tick,22)">Куплено билетов</button>
+    <button ng-click="$ctrl.buttonPressed(cur_id,cur_tick,1)">Ввод</button>
 </div>
