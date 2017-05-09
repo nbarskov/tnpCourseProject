@@ -6,9 +6,9 @@ import ru.ssau.domain.Flight;
 
 import javax.transaction.Transactional;
 
-@Service
-@Transactional
-public abstract class FlightsRepositoryCustomImpl implements FlightsRepositoryCustom{
+//@Service
+//@Transactional
+public abstract class FlightsRepositoryImpl implements FlightsRepositoryCustom{
     @Autowired
     private FlightsRepository flightsRepository;
 
