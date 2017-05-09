@@ -33,9 +33,20 @@ function FlightsService($http) {
                 }
             });
         },
+        updateTickets: function (flight, tickets_bought, tickets_availible) {
+            return $http({
+                url: BASE_URL + "/" + flight,
+                method: "PATCH",
+                data: {
+                    ticketsBought: tickets_bought,
+                    ticketsAvailable: tickets_availible
+                }
+            });
+        },
         allCompanies: function () {
             return $http.get("/companies");
         }
+
     };
 }
 

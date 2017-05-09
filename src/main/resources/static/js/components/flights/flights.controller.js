@@ -9,24 +9,27 @@ angular.module("components.flights").controller("FlightsController", function (F
                 ctrl.companies = [];
                 console.log("warn", response.status);
             }
-
             ctrl.filterChanged();
         }, function (error) {
             ctrl.companies = [];
             console.log("error", error);
         })
+
     };
 
     ctrl.filterChanged = function (years, company) {
         var findFlights;
 
         if ((years || years === 0) && company) {
+            //
             findFlights = FlightsService.allByFilter(years, company);
+
         } else if (years || years === 0) {
             findFlights = FlightsService.allByYears(years);
         } else if (company) {
             findFlights = FlightsService.allByCompany(company);
         } else {
+            //findFlights = FlightsService.updateTickets(20085, 22, 322);
             findFlights = FlightsService.all();
         }
 
@@ -42,4 +45,10 @@ angular.module("components.flights").controller("FlightsController", function (F
             console.log("error", error);
         });
     };
+
+    ctrl.buttonPressed = function(flight, tickets_bought, tickets_availible) {
+        var updateFlights;
+        updateFlights = FlightsService.updateTickets(flight,tickets_bought,tickets_availible);
+        updateFlights = FlightsService.all();
+    }
 });
