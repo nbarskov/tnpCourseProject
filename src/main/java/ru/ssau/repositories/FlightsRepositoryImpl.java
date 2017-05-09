@@ -1,7 +1,6 @@
 package ru.ssau.repositories;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Service;
 import ru.ssau.domain.Flight;
 
@@ -9,7 +8,7 @@ import javax.transaction.Transactional;
 
 @Service
 @Transactional
-public abstract class FlightsRepositoryImpl implements FlightsRepositoryCustom{
+public abstract class FlightsRepositoryCustomImpl implements FlightsRepositoryCustom{
     @Autowired
     private FlightsRepository flightsRepository;
 
